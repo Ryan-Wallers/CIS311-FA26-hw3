@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="styles.css">
   
   <title>Frontend Mentor | Contact form</title>
 
@@ -15,38 +17,74 @@
   </style>
 </head>
 <body>
+  <section class="container">
+    <form class="contact-form">
+      <h1 style="grid-area: formheader;">Contact Us</h1>
+      <fieldset style="grid-area: fname;">
+        <label for="fname">First Name</label>
+        <input class="inputbox" type="text" id="fname" name="fname">
+        <p>This field is required</p>
+      </fieldset>
 
-  Contact Us
+      <fieldset style="grid-area: lname;">
+        <label for="lname">Last Name</label>
+        <input class="inputbox" type="text" id="lname" name="lname">
+        <p>This field is required</p>
+      </fieldset>
 
-  First Name
-  This field is required
+      <fieldset style="grid-area: email;">
+        <label for="email">Email Address</label>
+        <input class="inputbox" type="email" name="email" id="email">
+        <p>Please enter a valid email address</p>
+        <p>This field is required</p>
+      </fieldset>
 
-  Last Name
-  This field is required
+      <fieldset style="grid-area: query;">
+        <legend for="query">Query Type</legend>
+          <div class="radio-box">
+            <input type="radio" name="query" id="general-enquiry">
+            <label for="general-enquiry">General Enquiry</label>
+          </div>
+          <div class="radio-box">
+            <input type="radio" name="query" id="support-request">
+            <label for="support-request">Support Request</label>
+          </div>
+        <p>Please select a query type</p>
+      </fieldset>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <fieldset style="grid-area: message;">
+        <label for="message">Message</label>
+        <textarea class="inputbox" name="message" id="message"></textarea>
+        <p>This field is required</p>
+      </fieldset>
+      
+      <fieldset style="grid-area: consent;">
+        <div>
+          <input type="checkbox" name="consent" id="consent">
+          <label for="consent">I consent to being contacted by the team</label>
+        </div>
+        <p>To submit this form, please consent to being contacted</p>
+      </fieldset>
+      
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+      <button type="button" id="submitButton" style="grid-area: submit;">Submit</button>
+    </form>
 
-  Message
-  This field is required
+    <div id="toast" popover="manual" role="status">
+    <p class="toast-title">Message Sent!</p>
+    <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+  </section>
+  
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+  
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
