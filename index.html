@@ -1,86 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <link rel="stylesheet" href="styles.css">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
   <section class="container">
     <form class="contact-form">
-      <h1 style="grid-area: formheader;">Contact Us</h1>
-      <fieldset style="grid-area: fname;">
-        <label for="fname">First Name</label>
-        <input class="inputbox" type="text" id="fname" name="fname">
-        <p>This field is required</p>
-      </fieldset>
+      <h1>Contact Us</h1>
+        <fieldset class="names">
+          <div class="namefield">
+            <label for="fname">First Name</label>
+            <input class="inputbox" type="text" id="fname" name="fname" required>
+            <p class="warning" id="fnameWarning">This field is required</p>
+          </div>
+          <div class="namefield">
+            <label for="lname">Last Name</label>
+            <input class="inputbox" type="text" id="lname" name="lname" required>
+            <p class="warning" id="lnameWarning">This field is required</p>
+          </div>
+        </fieldset>
 
-      <fieldset style="grid-area: lname;">
-        <label for="lname">Last Name</label>
-        <input class="inputbox" type="text" id="lname" name="lname">
-        <p>This field is required</p>
-      </fieldset>
-
-      <fieldset style="grid-area: email;">
+      <fieldset>
         <label for="email">Email Address</label>
-        <input class="inputbox" type="email" name="email" id="email">
-        <p>Please enter a valid email address</p>
-        <p>This field is required</p>
+        <input class="inputbox" type="email" name="email" id="email" required>
+        <p class="warning" id="emailInvalid">Please enter a valid email address</p>
+        <p class="warning" id="emailWarning">This field is required</p>
       </fieldset>
 
-      <fieldset style="grid-area: query;">
+      <fieldset>
         <legend for="query">Query Type</legend>
+        <div class="radio-line">
           <div class="radio-box">
-            <input type="radio" name="query" id="general-enquiry">
+            <input type="radio" name="query" id="general-enquiry" required>
             <label for="general-enquiry">General Enquiry</label>
           </div>
           <div class="radio-box">
-            <input type="radio" name="query" id="support-request">
+            <input type="radio" name="query" id="support-request" required>
             <label for="support-request">Support Request</label>
           </div>
-        <p>Please select a query type</p>
+        </div>
+        <p class="warning" id="queryWarning">Please select a query type</p>
       </fieldset>
 
-      <fieldset style="grid-area: message;">
+      <fieldset>
         <label for="message">Message</label>
-        <textarea class="inputbox" name="message" id="message"></textarea>
-        <p>This field is required</p>
+        <textarea rows="3" class="inputbox" name="message" id="message" required></textarea>
+        <p class="warning" id="messageWarning">This field is required</p>
       </fieldset>
-      
-      <fieldset style="grid-area: consent;">
+
+      <fieldset class="consent-box">
         <div>
           <input type="checkbox" name="consent" id="consent">
           <label for="consent">I consent to being contacted by the team</label>
         </div>
-        <p>To submit this form, please consent to being contacted</p>
+        <p class="warning">To submit this form, please consent to being contacted</p>
       </fieldset>
-      
 
-      <button type="button" id="submitButton" style="grid-area: submit;">Submit</button>
+
+      <button type="button" id="submitButton">Submit</button>
     </form>
 
     <div id="toast" popover="manual" role="status">
-    <p class="toast-title">Message Sent!</p>
-    <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
-  </div>
+      <p class="toast-title">Message Sent!</p>
+      <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
   </section>
-  
 
-  
-  
+
+
+
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
 
