@@ -39,10 +39,11 @@ body {
     top: 2rem;
 
     margin: auto;
-    padding: 0.75rem 1.25rem;
+    padding: 1.25rem;
     border: none;
+    border-radius: 10px;
 
-    background-color: var(--green600);
+    background-color: var(--grey900);
     color: white;
 
     opacity: 0;
@@ -62,6 +63,13 @@ body {
         opacity: 0;
         transform: translateY(2rem);
     }
+}
+
+.success-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .container {
@@ -118,6 +126,8 @@ fieldset {
     border-color: var(--green600);
 }
 
+input[type="radio"], input[type="checkbox"] { accent-color: var(--green600); }
+
 .consent-box {
     margin: 3rem 0;
 }
@@ -136,8 +146,13 @@ fieldset {
 #fname:user-invalid { border-color: var(--red);}
 #fname:user-invalid ~ #fnameWarning { display: block; }
 
+#lname:user-invalid { border-color: var(--red);}
 #lname:user-invalid ~ #lnameWarning { display: block; }
+
+#email:user-invalid { border-color: var(--red);}
 #email:user-invalid ~ #emailWarning { display: block; }
 #email:user-invalid ~ #emailInvalid { display: block; }
+
+#message:user-invalid { border-color: var(--red);}
 #message:user-invalid ~ #messageWarning { display: block; }
 
